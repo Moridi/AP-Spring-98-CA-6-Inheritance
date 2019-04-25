@@ -4,17 +4,6 @@
 
 using namespace std;
 
-FileSystem::ElementSharedPointer FileSystem::get_element(int id) const throw()
-{
-    constexpr int FIRST_ELEMENT = 0;
-
-    for (uint i = FIRST_ELEMENT; i < elements.size(); ++i)
-        if (elements[i]->has_same_id(id))
-            return elements[i];
-
-    throw BadElementId();
-}
-
 void FileSystem::view(int id)
 {
     try
@@ -25,4 +14,10 @@ void FileSystem::view(int id)
     {
         cerr << exception.what();
     }
+}
+
+void FileSystem::add_directory(int id, string title, int parent_id) throw()
+{
+    elements.push_back(make_shared<Directory>(
+            Directory(id, title, parent_id)));
 }

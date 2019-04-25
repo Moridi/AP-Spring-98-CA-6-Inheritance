@@ -38,6 +38,8 @@ FileSystemSensitivityList = \
 	$(SRC_DIR)/FileSystem.cpp \
 	$(INCLUDE_DIR)/FileSystem.h \
 	$(INCLUDE_DIR)/FileSystem-inl.h \
+	$(INCLUDE_DIR)/Exception.h \
+	$(INCLUDE_DIR)/Exception-inl.h
 
 MainSensitivityList = \
 	$(SRC_DIR)/Main.cpp \
