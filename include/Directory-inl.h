@@ -12,4 +12,9 @@ Directory::Directory(int _id, std::string _title, int _parent_id) noexcept
 {
 }
 
+std::string Directory::get_type() const
+{
+    return "Directory";
+}
+
 #endif

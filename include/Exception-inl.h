@@ -9,7 +9,17 @@
 
 inline const char* BadElementId::what() const throw()
 {
-    return "BadElementId exception occurred!";
+    return "Invalid element ID requested!";
+}
+
+inline const char* IdAlreadyExists::what() const throw()
+{
+    return "Requested ID already exists!";
+}
+
+inline const char* BadParentId::what() const throw()
+{
+    return "Parent ID is not referring to a directory!";
 }
 
 #endif

@@ -7,7 +7,10 @@ class Element
 {
 public:
     inline Element(int _id, std::string _title, int _parent_id) noexcept;
+    
     virtual void view() = 0;
+    virtual std::string get_type() const = 0;
+    
     inline bool has_same_id(int _id) const;
 
 protected:

@@ -18,6 +18,16 @@ void FileSystem::view(int id)
 
 void FileSystem::add_directory(int id, string title, int parent_id) throw()
 {
-    elements.push_back(make_shared<Directory>(
-            Directory(id, title, parent_id)));
+    try
+    {
+        check_id_validity(id);
+        check_parent_id_validity(parent_id);
+        elements.push_back(make_shared<Directory>(
+                Directory(id, title, parent_id)));
+    }
+    catch(const std::exception& exception)
+    {
+        std::cerr << exception.what();
+    }
+    
 }

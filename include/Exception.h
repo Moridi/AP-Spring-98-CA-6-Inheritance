@@ -9,7 +9,13 @@ public:
     inline const char* what() const throw();
 };
 
-class IdAlreadyExist : public std::exception
+class IdAlreadyExists : public std::exception
+{
+public:
+    inline const char* what() const throw();
+};
+
+class BadParentId : public std::exception
 {
 public:
     inline const char* what() const throw();

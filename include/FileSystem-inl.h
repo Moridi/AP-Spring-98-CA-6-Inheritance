@@ -33,4 +33,28 @@ FileSystem::ElementSharedPointer FileSystem::get_element(int id) const throw()
     throw BadElementId();
 }
 
+void FileSystem::check_id_validity(int id) const throw()
+{
+    constexpr int FIRST_ELEMENT = 0;
+
+    for (uint i = FIRST_ELEMENT; i < elements.size(); ++i)
+        if (elements[i]->has_same_id(id))
+            throw IdAlreadyExists();
+}
+
+void FileSystem::check_parent_id_validity(int id) const throw()
+{
+    constexpr int FIRST_ELEMENT = 0;
+    constexpr char DIRECTORY[] = "Directory";
+
+    for (uint i = FIRST_ELEMENT; i < elements.size(); ++i)
+        if (elements[i]->has_same_id(id))
+        {
+            if (elements[i]->get_type() != DIRECTORY)
+                throw BadParentId();
+            else
+                break;
+        }
+}
+
 #endif

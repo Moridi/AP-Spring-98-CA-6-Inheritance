@@ -8,6 +8,7 @@ class Directory : public Element
 public:
     inline Directory(int _id, std::string _title, int _parent_id) noexcept;
     virtual void view() override;
+    inline virtual std::string get_type() const override;
 
 private:
     
