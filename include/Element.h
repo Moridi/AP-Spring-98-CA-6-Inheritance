@@ -10,7 +10,8 @@ public:
     
     virtual void view() = 0;
     virtual std::string get_type() const = 0;
-    
+
+    inline std::string get_title() const;
     inline bool has_same_id(int _id) const;
 
 protected:

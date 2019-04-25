@@ -17,4 +17,9 @@ std::string Directory::get_type() const
     return "Directory";
 }
 
+void Directory::add_element(ElementSharedPointer new_element) noexcept
+{
+    elements.push_back(new_element);
+}
+
 #endif

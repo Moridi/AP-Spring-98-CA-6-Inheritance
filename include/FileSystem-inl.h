@@ -19,7 +19,8 @@ FileSystem::FileSystem()
     constexpr int ROOT_ID = 0;
     constexpr char ROOT_NAME[] = "root";
 
-    add_directory(ROOT_ID, ROOT_NAME, ROOT_ID);
+    elements.push_back(std::make_shared<Directory>(
+            Directory(ROOT_ID, ROOT_NAME, ROOT_ID)));
 }
 
 FileSystem::ElementSharedPointer FileSystem::get_element(int id) const throw()

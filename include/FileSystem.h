@@ -2,8 +2,8 @@
 #define FILE_SYSTEM_H_
 
 #include <string>
-#include <memory>
 #include <vector>
+#include <memory>
 
 class Element;
 
@@ -20,9 +20,12 @@ public:
 
     void view(int id);
 
+    void add_element(ElementSharedPointer new_element, int parent_id);
+
     inline ElementSharedPointer get_element(int id) const throw();
     inline void check_id_validity(int id) const throw();
     inline void check_parent_id_validity(int id) const throw();
+
 
 private:
     std::vector<ElementSharedPointer> elements;

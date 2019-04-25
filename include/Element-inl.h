@@ -21,4 +21,9 @@ bool Element::has_same_id(int _id) const
     return id == _id;
 }
 
+std::string Element::get_title() const
+{
+    return title;
+}
+
 #endif
