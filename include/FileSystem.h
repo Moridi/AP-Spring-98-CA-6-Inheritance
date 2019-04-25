@@ -1,5 +1,5 @@
-#ifndef FILE_SYSTEM_INTERFACE_H_
-#define FILE_SYSTEM_INTERFACE_H_
+#ifndef FILE_SYSTEM_H_
+#define FILE_SYSTEM_H_
 
 #include <string>
 
@@ -14,5 +14,7 @@ public:
 
     void view(int id);
 };
+
+#include "FileSystem-inl.h"
 
 #endif
