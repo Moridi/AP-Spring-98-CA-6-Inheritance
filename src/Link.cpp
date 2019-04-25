@@ -6,5 +6,6 @@ using namespace std;
 
 void Link::view()
 {
-    cout << title << endl;
+    cout << "Title: " << title << endl;
+    element->view();
 }

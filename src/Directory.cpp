@@ -6,7 +6,13 @@ using namespace std;
 
 void Directory::view()
 {
+    constexpr int FIRST_ELEMENT = 0;
+
     cout << "Title: " << title << endl;
+    
+    for (uint i = FIRST_ELEMENT; i < elements.size(); ++i)
+        cout << "Title: " << elements[i]->get_title() <<
+                ", Type: " << elements[i]->get_type() << endl;
 }
 
 void Directory::add_element(ElementSharedPointer new_element) throw()
