@@ -21,6 +21,12 @@ public:
     inline const char* what() const throw();
 };
 
+class BadTitle : public std::exception
+{
+public:
+    inline const char* what() const throw();
+};
+
 #include "Exception-inl.h"
 
 #endif

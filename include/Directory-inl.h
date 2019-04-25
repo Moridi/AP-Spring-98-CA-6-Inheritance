@@ -7,6 +7,8 @@
 
 #include "Directory.h"
 
+#include "Exception.h"
+
 Directory::Directory(int _id, std::string _title, int _parent_id) noexcept
 : Element(_id, _title, _parent_id)
 {
@@ -17,9 +19,13 @@ std::string Directory::get_type() const
     return "Directory";
 }
 
-void Directory::add_element(ElementSharedPointer new_element) noexcept
+void Directory::check_new_element_validity(std::string title) throw()
 {
-    elements.push_back(new_element);
+    constexpr int FIRST_ELEMENT = 0;
+
+    for (uint i = FIRST_ELEMENT; i < elements.size(); ++i)
+        if (elements[i]->has_same_title(title))
+            throw BadTitle();
 }
 
 #endif

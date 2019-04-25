@@ -26,4 +26,9 @@ std::string Element::get_title() const
     return title;
 }
 
+bool Element::has_same_title(std::string _title)
+{
+    return title == _title;
+}
+
 #endif

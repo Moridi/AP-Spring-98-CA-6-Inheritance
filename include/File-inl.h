@@ -7,8 +7,12 @@
 
 #include "File.h"
 
-File::File(int _id, std::string _title, int _parent_id) noexcept
-: Element(_id, _title, _parent_id)
+#include "Exception.h"
+
+File::File(int _id, std::string _title,
+        int _parent_id, std::string _content) noexcept
+: Element(_id, _title, _parent_id),
+content(_content)
 {
 }
 

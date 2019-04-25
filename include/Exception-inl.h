@@ -22,4 +22,9 @@ inline const char* BadParentId::what() const throw()
     return "Parent ID is not referring to a directory!";
 }
 
+inline const char* BadTitle::what() const throw()
+{
+    return "Parent directory has the same child!";
+}
+
 #endif

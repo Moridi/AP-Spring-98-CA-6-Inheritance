@@ -13,6 +13,7 @@ public:
 
     inline std::string get_title() const;
     inline bool has_same_id(int _id) const;
+    inline bool has_same_title(std::string _title);
 
 protected:
     int id;
