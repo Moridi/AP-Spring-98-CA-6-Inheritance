@@ -7,8 +7,10 @@
 
 #include "Link.h"
 
-Link::Link(int _id, std::string _title, int _parent_id) noexcept
-: Element(_id, _title, _parent_id)
+Link::Link(int _id, std::string _title, int _parent_id,
+        ElementSharedPointer _element) noexcept
+: Element(_id, _title, _parent_id),
+element(_element)
 {
 }
 

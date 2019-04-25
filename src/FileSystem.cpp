@@ -66,3 +66,19 @@ void FileSystem::add_file(int id, std::string title,
         std::cerr << exception.what();
     }
 }
+
+void FileSystem::add_link(int id, std::string title,
+        int element_id, int parent_id) throw()
+{
+    try
+    {
+        check_id_validity(id);
+        ElementSharedPointer linked_element = get_element(element_id);
+        add_element(make_shared<Link>(
+                Link(id, title, parent_id, linked_element)), parent_id);
+    }
+    catch(const std::exception& exception)
+    {
+        std::cerr << exception.what();
+    }
+}

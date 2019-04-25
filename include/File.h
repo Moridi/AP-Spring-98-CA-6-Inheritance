@@ -9,8 +9,6 @@
 class File : public Element
 {
 public:
-    typedef std::shared_ptr<Element> ElementSharedPointer;
-
     inline File(int _id, std::string _title, int _parent_id,
             std::string _content) noexcept;
     virtual void view() override;
