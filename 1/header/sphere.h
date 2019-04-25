@@ -8,7 +8,7 @@ class Sphere: public Shape
 protected:
 	int radius;
 public:
-	Sphere(int _x, int _y, int _z, int r): Shape(_x, _y, _z), radius(r) {}
+	Sphere(int _x, int _y, int _z, int r);
 	virtual void scale(int factor);
 	virtual int volume();
 	virtual std::string type();

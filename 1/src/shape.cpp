@@ -3,6 +3,9 @@
 
 using namespace std;
 
+Shape::Shape(int _x, int _y, int _z)
+	: x(_x), y(_y), z(_z) {}
+
 void Shape::move(int dx, int dy, int dz) {
 	x += dx;
 	y += dy;
@@ -10,5 +13,7 @@ void Shape::move(int dx, int dy, int dz) {
 }
 
 void Shape::print() {
-	cout << "type: " << type() << ", center: (" << x << ", " << y << ", " << z << "), volume: " << volume() << endl;
+	cout << "type: " << type() << ", ";
+	cout << "center: (" << x << ", " << y << ", " << z << "), ";
+	cout << "volume: " << volume() << endl;
 }

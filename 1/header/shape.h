@@ -10,7 +10,7 @@ protected:
 	int y;
 	int z;
 public:
-	Shape(int _x, int _y, int _z): x(_x), y(_y), z(_z) {}
+	Shape(int _x, int _y, int _z);
 	void move(int dx, int dy, int dz);
 	void print();
 	virtual void scale(int factor) = 0;

@@ -10,7 +10,7 @@ protected:
 	int height;
 	int depth;
 public:
-	Cuboid(int _x, int _y, int _z, int w, int h, int d): Shape(_x, _y, _z), width(w), height(h), depth(d) {}
+	Cuboid(int _x, int _y, int _z, int w, int h, int d);
 	virtual void scale(int factor);
 	virtual int volume();
 	virtual std::string type();

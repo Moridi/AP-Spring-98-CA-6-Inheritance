@@ -9,7 +9,7 @@ protected:
 	int radius;
 	int height;
 public:
-	Cone(int _x, int _y, int _z, int r, int h): Shape(_x, _y, _z), radius(r), height(h) {}
+	Cone(int _x, int _y, int _z, int r, int h);
 	virtual void scale(int factor);
 	virtual int volume();
 	virtual std::string type();

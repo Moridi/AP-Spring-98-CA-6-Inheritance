@@ -3,6 +3,9 @@
 
 using namespace std;
 
+Sphere::Sphere(int _x, int _y, int _z, int r)
+	: Shape(_x, _y, _z), radius(r) {}
+
 void Sphere::scale(int factor) {
 	radius *= factor;
 }
