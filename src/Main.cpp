@@ -2,7 +2,7 @@
 
 int main()
 {
-    // FileSystemInterface interface = FileSystemInterface();
+    FileSystem interface = FileSystem();
 
     // interface.add_directory(1, "root", NULL);
     // interface.add_file(2, "a.txt", "lab lab lab...", 1);
