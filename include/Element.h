@@ -7,12 +7,13 @@ class Element
 {
 public:
     inline Element(int _id, std::string _title, int _parent_id) noexcept;
+    virtual void view() = 0;
+    inline bool has_same_id(int _id) const;
 
-private:
+protected:
     int id;
     std::string title;
     int parent_id;
-
 };
 
 #include "Element-inl.h"

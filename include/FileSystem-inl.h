@@ -22,4 +22,9 @@ FileSystem::FileSystem() noexcept
             Directory(ROOT_ID, ROOT_NAME, ROOT_ID)));
 }
 
+inline const char* BadElementId::what() const throw()
+{
+    return "BadElementId exception occurred!";
+}
+
 #endif

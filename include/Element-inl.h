@@ -16,4 +16,9 @@ parent_id(_parent_id)
 {
 }
 
+bool Element::has_same_id(int _id) const
+{
+    return id == _id;
+}
+
 #endif
