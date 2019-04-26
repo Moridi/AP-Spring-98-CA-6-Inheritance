@@ -12,7 +12,7 @@ void Shape::move(int dx, int dy, int dz) {
 	z += dz;
 }
 
-ostream& operator<<(ostream& out, Shape* shape) {
+ostream& operator<<(ostream& out, const Shape* shape) {
 	out << "type: " << shape->type() << ", ";
 	out << "center: (" << shape->x << ", " << shape->y << ", " << shape->z << "), ";
 	out << "volume: " << shape->volume();
