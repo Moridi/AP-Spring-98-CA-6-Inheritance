@@ -16,7 +16,7 @@ public:
 	virtual void scale(int factor) = 0;
 	virtual int volume() const = 0;
 	virtual std::string type() const = 0;
-    friend std::ostream& operator<<(std::ostream& out, Shape* shape);
+	friend std::ostream& operator<<(std::ostream& out, Shape* shape);
 };
 
 #endif
