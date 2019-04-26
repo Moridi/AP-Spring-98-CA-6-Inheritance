@@ -11,8 +11,8 @@ protected:
 public:
 	Cone(int _x, int _y, int _z, int r, int h);
 	virtual void scale(int factor);
-	virtual int volume();
-	virtual std::string type();
+	virtual int volume() const;
+	virtual std::string type() const;
 };
 
 #endif

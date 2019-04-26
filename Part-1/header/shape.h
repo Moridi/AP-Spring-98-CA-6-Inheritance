@@ -2,6 +2,7 @@
 #define __SHAPE_H__
 
 #include <string>
+#include <iostream>
 
 class Shape
 {
@@ -12,10 +13,10 @@ protected:
 public:
 	Shape(int _x, int _y, int _z);
 	void move(int dx, int dy, int dz);
-	void print();
 	virtual void scale(int factor) = 0;
-	virtual int volume() = 0;
-	virtual std::string type() = 0;
+	virtual int volume() const = 0;
+	virtual std::string type() const = 0;
+    friend std::ostream& operator<<(std::ostream& out, Shape* shape);
 };
 
 #endif

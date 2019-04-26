@@ -12,8 +12,8 @@ protected:
 public:
 	Cuboid(int _x, int _y, int _z, int w, int h, int d);
 	virtual void scale(int factor);
-	virtual int volume();
-	virtual std::string type();
+	virtual int volume() const;
+	virtual std::string type() const;
 };
 
 #endif

@@ -12,8 +12,9 @@ void Shape::move(int dx, int dy, int dz) {
 	z += dz;
 }
 
-void Shape::print() {
-	cout << "type: " << type() << ", ";
-	cout << "center: (" << x << ", " << y << ", " << z << "), ";
-	cout << "volume: " << volume() << endl;
+ostream& operator<<(ostream& out, Shape* shape) {
+	out << "type: " << shape->type() << ", ";
+	out << "center: (" << shape->x << ", " << shape->y << ", " << shape->z << "), ";
+	out << "volume: " << shape->volume();
+    return out;
 }

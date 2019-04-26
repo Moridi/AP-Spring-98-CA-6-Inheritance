@@ -11,10 +11,10 @@ void Cone::scale(int factor) {
 	height *= factor;
 }
 
-int Cone::volume() {
+int Cone::volume() const {
 	return (1.0 / 3) * PI * radius * radius * height;
 }
 
-string Cone::type() {
+string Cone::type() const {
 	return "Cone";
 }

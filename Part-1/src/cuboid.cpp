@@ -11,10 +11,10 @@ void Cuboid::scale(int factor) {
 	depth *= factor;
 }
 
-int Cuboid::volume() {
+int Cuboid::volume() const {
 	return width * height * depth;
 }
 
-string Cuboid::type() {
+string Cuboid::type() const {
 	return "Cuboid";
 }

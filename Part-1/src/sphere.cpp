@@ -10,10 +10,10 @@ void Sphere::scale(int factor) {
 	radius *= factor;
 }
 
-int Sphere::volume() {
+int Sphere::volume() const {
 	return (4.0 / 3) * PI * radius * radius * radius;
 }
 
-string Sphere::type() {
+string Sphere::type() const {
 	return "Sphere";
 }
