@@ -25,7 +25,7 @@ public:
     inline ElementSharedPointer get_element(int id) const throw();
     inline void check_id_validity(int id) const throw();
     inline void check_parent_id_validity(int id) const throw();
-
+    inline ElementSharedPointer get_linked_element(int element_id) const throw();
 
 private:
     std::vector<ElementSharedPointer> elements;

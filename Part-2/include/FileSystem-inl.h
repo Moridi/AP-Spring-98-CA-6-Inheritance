@@ -58,4 +58,18 @@ void FileSystem::check_parent_id_validity(int id) const throw()
         }
 }
 
+FileSystem::ElementSharedPointer FileSystem::get_linked_element(
+        int element_id) const throw()
+{
+    constexpr char DIRECTORY[] = "Directory";
+    constexpr char FILE[] = "File";
+
+    ElementSharedPointer linked_element = get_element(element_id);
+    std::string type = linked_element->get_type();
+    if (type == DIRECTORY || type == FILE)
+        return linked_element;
+        
+    throw BadLinkedElement();
+}
+
 #endif

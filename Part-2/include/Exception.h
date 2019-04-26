@@ -27,6 +27,12 @@ public:
     inline const char* what() const throw();
 };
 
+class BadLinkedElement : public std::exception
+{
+public:
+    inline const char* what() const throw();
+};
+
 #include "Exception-inl.h"
 
 #endif

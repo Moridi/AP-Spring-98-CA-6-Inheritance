@@ -73,7 +73,7 @@ void FileSystem::add_link(int id, std::string title,
     try
     {
         check_id_validity(id);
-        ElementSharedPointer linked_element = get_element(element_id);
+        ElementSharedPointer linked_element = get_linked_element(element_id);
         add_element(make_shared<Link>(
                 Link(id, title, parent_id, linked_element)), parent_id);
     }
