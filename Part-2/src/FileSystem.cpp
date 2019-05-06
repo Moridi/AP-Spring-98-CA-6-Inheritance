@@ -37,7 +37,7 @@ void FileSystem::add_element(ElementSharedPointer new_element, int parent_id)
     }
 }
 
-void FileSystem::add_directory(int id, string title, int parent_id) throw()
+void FileSystem::add_directory(int id, string title, int parent_id)
 {
     try
     {
@@ -53,7 +53,7 @@ void FileSystem::add_directory(int id, string title, int parent_id) throw()
 }
 
 void FileSystem::add_file(int id, std::string title,
-        std::string content, int parent_id) throw()
+        std::string content, int parent_id)
 {
     try
     {
@@ -68,7 +68,7 @@ void FileSystem::add_file(int id, std::string title,
 }
 
 void FileSystem::add_link(int id, std::string title,
-        int element_id, int parent_id) throw()
+        int element_id, int parent_id)
 {
     try
     {

@@ -14,8 +14,8 @@ public:
     inline Directory(int _id, std::string _title, int _parent_id) noexcept;
     virtual void view() override;
     inline virtual std::string get_type() const override;
-    inline void check_new_element_validity(std::string title) throw();
-    void add_element(ElementSharedPointer new_element) throw();
+    inline void check_new_element_validity(std::string title);
+    void add_element(ElementSharedPointer new_element);
 
 private:
     std::vector<ElementSharedPointer> elements;

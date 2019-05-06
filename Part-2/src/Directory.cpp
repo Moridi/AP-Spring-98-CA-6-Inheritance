@@ -15,7 +15,7 @@ void Directory::view()
                 ", Type: " << elements[i]->get_type() << endl;
 }
 
-void Directory::add_element(ElementSharedPointer new_element) throw()
+void Directory::add_element(ElementSharedPointer new_element)
 {
     try
     {

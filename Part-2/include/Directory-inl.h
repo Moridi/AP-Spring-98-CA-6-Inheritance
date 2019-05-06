@@ -19,7 +19,7 @@ std::string Directory::get_type() const
     return "Directory";
 }
 
-void Directory::check_new_element_validity(std::string title) throw()
+void Directory::check_new_element_validity(std::string title)
 {
     constexpr int FIRST_ELEMENT = 0;
 
