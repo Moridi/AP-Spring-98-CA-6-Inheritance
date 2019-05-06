@@ -1,0 +1,7 @@
+Title: sampleLink
+Title: root
+Title: etc, Type: Directory
+
+Title: etc
+Title: sampleLink, Type: Link
+

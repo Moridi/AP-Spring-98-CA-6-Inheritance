@@ -11,7 +11,7 @@ OBJECTS = \
 	$(BUILD_DIR)/Link.o \
 	$(BUILD_DIR)/Directory.o \
 	$(BUILD_DIR)/FileSystem.o \
-	$(BUILD_DIR)/Main.o \
+	$(BUILD_DIR)/main.o \
 
 FileSensitivityList = \
 	$(SRC_DIR)/File.cpp \
@@ -44,7 +44,7 @@ FileSystemSensitivityList = \
 	$(INCLUDE_DIR)/Element-inl.h \
 
 MainSensitivityList = \
-	$(SRC_DIR)/Main.cpp \
+	$(SRC_DIR)/main.cpp \
 	$(INCLUDE_DIR)/FileSystem.h \
 
 all: $(BUILD_DIR) $(EXECUTABLE_FILE)
@@ -64,8 +64,8 @@ $(BUILD_DIR)/Link.o: $(LinkSensitivityList)
 $(BUILD_DIR)/FileSystem.o: $(FileSystemSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/FileSystem.cpp -o $(BUILD_DIR)/FileSystem.o
 
-$(BUILD_DIR)/Main.o: $(MainSensitivityList)
-	$(CC) $(CFLAGS) -c $(SRC_DIR)/Main.cpp -o $(BUILD_DIR)/Main.o
+$(BUILD_DIR)/main.o: $(MainSensitivityList)
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/main.cpp -o $(BUILD_DIR)/main.o
 
 $(EXECUTABLE_FILE): $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $(EXECUTABLE_FILE)
