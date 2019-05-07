@@ -1,0 +1,16 @@
+Title: root
+
+Title: shadow
+Content:
+root:!:1331:0:99999:7:::
+
+Title: etc
+Title: shadow, Type: File
+Title: passwd, Type: File
+
+Title: sampleLink
+Title: etc
+Title: shadow, Type: File
+Title: passwd, Type: File
+Title: ssh, Type: Directory
+

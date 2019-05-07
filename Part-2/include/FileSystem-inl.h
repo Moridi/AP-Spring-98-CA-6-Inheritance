@@ -23,7 +23,7 @@ FileSystem::FileSystem()
             Directory(ROOT_ID, ROOT_NAME, ROOT_ID)));
 }
 
-FileSystem::ElementSharedPointer FileSystem::get_element(int id) const throw()
+FileSystem::ElementSharedPointer FileSystem::get_element(int id) const
 {
     constexpr int FIRST_ELEMENT = 0;
 
@@ -34,7 +34,7 @@ FileSystem::ElementSharedPointer FileSystem::get_element(int id) const throw()
     throw BadElementId();
 }
 
-void FileSystem::check_id_validity(int id) const throw()
+void FileSystem::check_id_validity(int id) const
 {
     constexpr int FIRST_ELEMENT = 0;
 
@@ -43,7 +43,7 @@ void FileSystem::check_id_validity(int id) const throw()
             throw IdAlreadyExists();
 }
 
-void FileSystem::check_parent_id_validity(int id) const throw()
+void FileSystem::check_parent_id_validity(int id) const
 {
     constexpr int FIRST_ELEMENT = 0;
     constexpr char DIRECTORY[] = "Directory";
@@ -59,7 +59,7 @@ void FileSystem::check_parent_id_validity(int id) const throw()
 }
 
 FileSystem::ElementSharedPointer FileSystem::get_linked_element(
-        int element_id) const throw()
+        int element_id) const
 {
     constexpr char DIRECTORY[] = "Directory";
     constexpr char FILE[] = "File";
