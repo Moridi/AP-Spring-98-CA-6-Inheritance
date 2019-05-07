@@ -1,0 +1,12 @@
+type: Sphere, center: (0, -5, 2), volume: 113
+type: Cuboid, center: (-15, 11, -50), volume: 70
+type: Sphere, center: (5, 1, 5), volume: 33
+type: Cone, center: (5, 7, -1), volume: 50
+type: Cone, center: (-20, 0, 5), volume: 52
+type: Cuboid, center: (-5, 5, -5), volume: 36
+type: Sphere, center: (0, -25, 2), volume: 3052
+type: Cuboid, center: (-15, -9, -50), volume: 1890
+type: Sphere, center: (5, -19, 5), volume: 904
+type: Cone, center: (5, -13, -1), volume: 1356
+type: Cone, center: (-20, -20, 5), volume: 1413
+type: Cuboid, center: (-5, -15, -5), volume: 972
