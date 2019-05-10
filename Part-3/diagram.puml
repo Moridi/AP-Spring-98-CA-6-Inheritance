@@ -25,29 +25,39 @@ class GameManagerLogic {
 	+ play()
 	+ get_result(): String
 }
+note right of GameManagerLogic
+Imagin player_a has the ball & want to forward through pllayer b:
+GameManagerLogic: call <i>player_a->duel(player_b)</i> to get duel result 
+Inside player_a duel method:
+    We have player_a forward power(FP) 
+    We get defence power of opponent <b>against player_a</b> by calling: <i>player_b->defend(this)</i>
+        This is called <b>Double Dispatch</b>
+    So we can return duel result as follow:
+    <i>return FP > player_b->defend(this);</i>
+end note
 
 abstract class Player {
     - stamina : Integer
     - dribble : Integer
     - pass : Integer
     - defend : Integer
-    {abstract} + defend() : Integer
-    {abstract} + forward() : Integer
+    {abstract} + duel(player: Player*) : Boolean
+    {abstract} + defend(player: Player*) : Integer
 }
 
 class GoalKeeper {
-    + defend() : Integer
-    + forward() : Integer
+    + duel(player: Player*) : Boolean
+    + defend(player: Player*) : Integer
 }
 
 class Defender {
-    + defend() : Integer
-    + forward() : Integer
+    + duel(player: Player*) : Boolean
+    + defend(player: Player*) : Integer
 }
 
 class Striker {
-    + defend() : Integer
-    + forward() : Integer
+    + duel(player: Player*) : Boolean
+    + defend(player: Player*) : Integer
 }
 
 GameManagerInterface ..> GameManagerLogic
