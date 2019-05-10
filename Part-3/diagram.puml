@@ -16,12 +16,6 @@ class GameManagerInterface {
 }
 
 class GameManagerLogic {
-    - team_A_goalkeeper: Player
-    - team_A_defender: Player
-    - team_A_striker: Player
-    - team_B_goalkeeper: Player
-    - team_B_defender: Player
-    - team_B_striker: Player
     + add_team_A_goalkeeper(info: PlayerInfo)
 	+ add_team_A_defender(info: PlayerInfo)
 	+ add_team_A_striker(info: PlayerInfo)
@@ -31,33 +25,48 @@ class GameManagerLogic {
 	+ play()
 	+ get_result(): String
 }
+note right of GameManagerLogic
+Imagin player_a has the ball & want to forward through pllayer b:
+GameManagerLogic: call <i>player_a->duel(player_b)</i> to get duel result 
+Inside player_a duel method:
+    We have player_a forward power(FP) 
+    We get defence power of opponent <b>against player_a</b> by calling: <i>player_b->defend(this)</i>
+        This is called <b>Double Dispatch</b>
+    So we can return duel result as follow:
+    <i>return FP > player_b->defend(this);</i>
+end note
 
 abstract class Player {
     - stamina : Integer
     - dribble : Integer
     - pass : Integer
     - defend : Integer
-    {abstract} + defend() : Integer
-    {abstract} + forward() : Integer
+    {abstract} + duel(player: Player*) : Boolean
+    {abstract} + defend(player: Player*) : Integer
 }
 
 class GoalKeeper {
-    + defend() : Integer
-    + forward() : Integer
+    + duel(player: Player*) : Boolean
+    + defend(player: Player*) : Integer
 }
 
 class Defender {
-    + defend() : Integer
-    + forward() : Integer
+    + duel(player: Player*) : Boolean
+    + defend(player: Player*) : Integer
 }
 
 class Striker {
-    + defend() : Integer
-    + forward() : Integer
+    + duel(player: Player*) : Boolean
+    + defend(player: Player*) : Integer
 }
 
 GameManagerInterface ..> GameManagerLogic
-GameManagerLogic ..> Player
+GameManagerLogic *---> Player: team_A_goalkeeper
+GameManagerLogic *---> Player: team_A_defender
+GameManagerLogic *---> Player: team_A_striker
+GameManagerLogic *---> Player: team_B_goalkeeper
+GameManagerLogic *---> Player: team_B_defender
+GameManagerLogic *---> Player: team_B_striker
 GameManagerLogic ..> GoalKeeper: create
 GameManagerLogic ..> Defender: create
 GameManagerLogic ..> Striker: create

@@ -13,7 +13,6 @@ class FileSystemInterface {
 }
 
 class FileSystemLogic {
-    - elements : vector<ElementSharedPointer>
     + add_directory(id : Integer, title : String, parent_id : Integer)
     + add_file(id : Integer, title : String, content : String, parent_id : Integer)
     + add_link(id : Integer, title : String, element_id : Integer, parent_id : Integer)
@@ -28,7 +27,6 @@ abstract class Element {
 }
 
 class Directory {
-    - elements : vector<ElementSharedPointer>
     + view()
 }
 
@@ -38,7 +36,6 @@ class File {
 }
 
 class Link {
-    - element : ElementSharedPointer
     + view()
 }
 
@@ -66,8 +63,7 @@ class BadLinkedElement {
     + what()
 }
 
-FileSystemInterface ..> FileSystemLogic
-FileSystemLogic ..> Element
+FileSystemInterface ---> FileSystemLogic
 FileSystemLogic ..> Directory: create
 FileSystemLogic ..> File: create
 FileSystemLogic ..> Link: create
@@ -75,6 +71,10 @@ FileSystemLogic ..> Link: create
 Directory -up-|> Element
 File -up-|> Element
 Link -up-|> Element
+
+FileSystemLogic "1" *---> "*" Element: elements
+Directory "1" *-up-> "*" Element: elements
+Link "*" o-up-> "1" Element: element
 
 BadElementId -up-|> Exception
 IdAlreadyExists -up-|> Exception
