@@ -16,12 +16,6 @@ class GameManagerInterface {
 }
 
 class GameManagerLogic {
-    - team_A_goalkeeper: Player
-    - team_A_defender: Player
-    - team_A_striker: Player
-    - team_B_goalkeeper: Player
-    - team_B_defender: Player
-    - team_B_striker: Player
     + add_team_A_goalkeeper(info: PlayerInfo)
 	+ add_team_A_defender(info: PlayerInfo)
 	+ add_team_A_striker(info: PlayerInfo)
@@ -57,7 +51,12 @@ class Striker {
 }
 
 GameManagerInterface ..> GameManagerLogic
-GameManagerLogic ..> Player
+GameManagerLogic *---> Player: team_A_goalkeeper
+GameManagerLogic *---> Player: team_A_defender
+GameManagerLogic *---> Player: team_A_striker
+GameManagerLogic *---> Player: team_B_goalkeeper
+GameManagerLogic *---> Player: team_B_defender
+GameManagerLogic *---> Player: team_B_striker
 GameManagerLogic ..> GoalKeeper: create
 GameManagerLogic ..> Defender: create
 GameManagerLogic ..> Striker: create
