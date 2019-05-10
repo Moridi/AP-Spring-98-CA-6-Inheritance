@@ -1,0 +1,76 @@
+@startuml
+
+skinparam Monochrome true
+
+title __Football Class Diagram__\n
+
+class GameManagerInterface {
+    + add_team_A_goalkeeper(info: PlayerInfo)
+	+ add_team_A_defender(info: PlayerInfo)
+	+ add_team_A_striker(info: PlayerInfo)
+	+ add_team_B_goalkeeper(info: PlayerInfo)
+	+ add_team_B_defender(info: PlayerInfo)
+	+ add_team_B_striker(info: PlayerInfo)
+	+ play()
+	+ get_result(): String
+}
+
+class GameManagerLogic {
+    - team_A_goalkeeper: Player
+    - team_A_defender: Player
+    - team_A_striker: Player
+    - team_B_goalkeeper: Player
+    - team_B_defender: Player
+    - team_B_striker: Player
+    + add_team_A_goalkeeper(info: PlayerInfo)
+	+ add_team_A_defender(info: PlayerInfo)
+	+ add_team_A_striker(info: PlayerInfo)
+	+ add_team_B_goalkeeper(info: PlayerInfo)
+	+ add_team_B_defender(info: PlayerInfo)
+	+ add_team_B_striker(info: PlayerInfo)
+	+ play()
+	+ get_result(): String
+}
+
+abstract class Player {
+    - stamina : Integer
+    - dribble : Integer
+    - pass : Integer
+    - defend : Integer
+    {abstract} + defend() : Integer
+    {abstract} + forward() : Integer
+}
+
+class GoalKeeper {
+    + defend() : Integer
+    + forward() : Integer
+}
+
+class Defender {
+    + defend() : Integer
+    + forward() : Integer
+}
+
+class Striker {
+    + defend() : Integer
+    + forward() : Integer
+}
+
+GameManagerInterface ..> GameManagerLogic
+GameManagerLogic ..> Player
+GameManagerLogic ..> GoalKeeper: create
+GameManagerLogic ..> Defender: create
+GameManagerLogic ..> Striker: create
+
+GoalKeeper -up-|> Player
+Defender -up-|> Player
+Striker -up-|> Player
+
+
+right footer
+
+
+    Class diagram in design level
+endfooter
+
+@enduml

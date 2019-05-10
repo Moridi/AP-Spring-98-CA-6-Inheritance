@@ -13,6 +13,7 @@ class FileSystemInterface {
 }
 
 class FileSystemLogic {
+    - elements : vector<ElementSharedPointer>
     + add_directory(id : Integer, title : String, parent_id : Integer)
     + add_file(id : Integer, title : String, content : String, parent_id : Integer)
     + add_link(id : Integer, title : String, element_id : Integer, parent_id : Integer)
