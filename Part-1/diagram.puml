@@ -1,0 +1,52 @@
+@startuml
+
+skinparam Monochrome true
+
+title __Shape 3D Class Diagram__\n
+
+
+abstract class Shape {
+    - x : Integer
+    - y : Integer
+    - z : Integer
+    + move(dx: Integer, dy: Integer, dz: Integer)
+    {abstract} + scale(factor: Integer)
+    {abstract} + volume()
+    {abstract} + type(): String
+}
+
+class Cone {
+    - radius: Integer
+    - height: Integer
+    + scale(factor: Integer)
+    + volume()
+    + type(): String
+}
+
+class Cuboid {
+    - width: Integer
+    - height: Integer
+    - depth: Integer
+    + scale(factor: Integer)
+    + volume()
+    + type(): String
+}
+
+class Sphere {
+    - radius: Integer
+    + scale(factor: Integer)
+    + volume()
+    + type(): String
+}
+
+Cone -up-|> Shape
+Cuboid -up-|> Shape
+Sphere -up-|> Shape
+
+right footer
+
+
+    Class diagram in design level
+endfooter
+
+@enduml
