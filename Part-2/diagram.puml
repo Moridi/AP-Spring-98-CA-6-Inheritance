@@ -1,0 +1,90 @@
+@startuml
+
+skinparam Monochrome true
+
+title __File System Class Diagram__\n
+
+
+class FileSystemInterface {
+    + add_directory(id : Integer, title : String, parent_id : Integer)
+    + add_file(id : Integer, title : String, content : String, parent_id : Integer)
+    + add_link(id : Integer, title : String, element_id : Integer, parent_id : Integer)
+    + view(id : Integer)
+}
+
+class FileSystemLogic {
+    + add_directory(id : Integer, title : String, parent_id : Integer)
+    + add_file(id : Integer, title : String, content : String, parent_id : Integer)
+    + add_link(id : Integer, title : String, element_id : Integer, parent_id : Integer)
+    + view(id : Integer)
+}
+
+abstract class Element {
+    - id : Integer
+    - title : String
+    - parent_id : Integer
+    {abstract} + view();
+}
+
+class Directory {
+    - elements : vector<ElementSharedPointer>
+    + view()
+}
+
+class File {
+    - content : String
+    + view()
+}
+
+class Link {
+    - element : ElementSharedPointer
+    + view()
+}
+
+class Exception {
+    {abstract} + what()
+}
+
+class BadElementId {
+    + what()
+}
+
+class IdAlreadyExists {
+    + what()
+}
+
+class BadParentId {
+    + what()
+}
+
+class BadTitle {
+    + what()
+}
+
+class BadLinkedElement {
+    + what()
+}
+
+FileSystemInterface ..> FileSystemLogic
+FileSystemLogic ..> Element
+FileSystemLogic ..> Directory: create
+FileSystemLogic ..> File: create
+FileSystemLogic ..> Link: create
+
+Directory -up-|> Element
+File -up-|> Element
+Link -up-|> Element
+
+BadElementId -up-|> Exception
+IdAlreadyExists -up-|> Exception
+BadParentId -up-|> Exception
+BadTitle -up-|> Exception
+BadLinkedElement -up-|> Exception
+
+right footer
+
+
+    Class diagram in design level
+endfooter
+
+@enduml
