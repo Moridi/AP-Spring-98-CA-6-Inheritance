@@ -1,8 +1,8 @@
-#include "FileSystem.h"
+#include "file_system_interface.h"
 
 int main()
 {
-    FileSystem interface = FileSystem();
+    FileSystemInterface interface = FileSystemInterface();
     interface.view(1);
     
     return 0;

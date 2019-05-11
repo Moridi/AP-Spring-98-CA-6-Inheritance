@@ -2,10 +2,10 @@
 #define FILE_SYSTEM_INL_H_
 
 #ifndef FILE_SYSTEM_H_
-#error "FileSystem-inl.h" should be included only in "FileSystem.h" file.
+#error "FileSystemInterface-inl.h" should be included only in "file_system_interface.h" file.
 #endif
 
-#include "FileSystem.h"
+#include "file_system_interface.h"
 
 #include <memory>
 
@@ -14,7 +14,7 @@
 #include "Link.h"
 #include "Exception.h"
 
-FileSystem::FileSystem()
+FileSystemInterface::FileSystemInterface()
 {
     constexpr int ROOT_ID = 0;
     constexpr char ROOT_NAME[] = "root";
@@ -23,7 +23,7 @@ FileSystem::FileSystem()
             Directory(ROOT_ID, ROOT_NAME, ROOT_ID)));
 }
 
-FileSystem::ElementSharedPointer FileSystem::get_element(int id) const
+FileSystemInterface::ElementSharedPointer FileSystemInterface::get_element(int id) const
 {
     constexpr int FIRST_ELEMENT = 0;
 
@@ -34,7 +34,7 @@ FileSystem::ElementSharedPointer FileSystem::get_element(int id) const
     throw BadElementId();
 }
 
-void FileSystem::check_id_validity(int id) const
+void FileSystemInterface::check_id_validity(int id) const
 {
     constexpr int FIRST_ELEMENT = 0;
 
@@ -43,7 +43,7 @@ void FileSystem::check_id_validity(int id) const
             throw IdAlreadyExists();
 }
 
-void FileSystem::check_parent_id_validity(int id) const
+void FileSystemInterface::check_parent_id_validity(int id) const
 {
     constexpr int FIRST_ELEMENT = 0;
     constexpr char DIRECTORY[] = "Directory";
@@ -58,7 +58,7 @@ void FileSystem::check_parent_id_validity(int id) const
         }
 }
 
-FileSystem::ElementSharedPointer FileSystem::get_linked_element(
+FileSystemInterface::ElementSharedPointer FileSystemInterface::get_linked_element(
         int element_id) const
 {
     constexpr char DIRECTORY[] = "Directory";

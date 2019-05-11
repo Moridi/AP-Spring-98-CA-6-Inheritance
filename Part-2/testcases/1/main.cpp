@@ -1,11 +1,11 @@
 #include <iostream>
-#include "FileSystem.h"
+#include "file_system_interface.h"
 
 using namespace std;
 
 int main()
 {
-    FileSystem interface = FileSystem();
+    FileSystemInterface interface = FileSystemInterface();
     interface.view(0);
     cout << endl;
 

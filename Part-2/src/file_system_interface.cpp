@@ -1,4 +1,4 @@
-#include "FileSystem.h"
+#include "file_system_interface.h"
 
 #include <iostream>
 
@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void FileSystem::view(int id)
+void FileSystemInterface::view(int id)
 {
     try
     {
@@ -20,7 +20,7 @@ void FileSystem::view(int id)
     }
 }
 
-void FileSystem::add_element(ElementSharedPointer new_element, int parent_id)
+void FileSystemInterface::add_element(ElementSharedPointer new_element, int parent_id)
 {
     try
     {
@@ -37,7 +37,7 @@ void FileSystem::add_element(ElementSharedPointer new_element, int parent_id)
     }
 }
 
-void FileSystem::add_directory(int id, string title, int parent_id)
+void FileSystemInterface::add_directory(int id, string title, int parent_id)
 {
     try
     {
@@ -52,7 +52,7 @@ void FileSystem::add_directory(int id, string title, int parent_id)
     }
 }
 
-void FileSystem::add_file(int id, std::string title,
+void FileSystemInterface::add_file(int id, std::string title,
         std::string content, int parent_id)
 {
     try
@@ -67,7 +67,7 @@ void FileSystem::add_file(int id, std::string title,
     }
 }
 
-void FileSystem::add_link(int id, std::string title,
+void FileSystemInterface::add_link(int id, std::string title,
         int element_id, int parent_id)
 {
     try

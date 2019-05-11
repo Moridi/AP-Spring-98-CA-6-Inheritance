@@ -7,12 +7,12 @@
 
 class Element;
 
-class FileSystem
+class FileSystemInterface
 {
 public:
     typedef std::shared_ptr<Element> ElementSharedPointer;
 
-    inline FileSystem();
+    inline FileSystemInterface();
 
     void add_directory(int id, std::string title, int parent_id);
     void add_file(int id, std::string title, std::string content, int parent_id);
@@ -31,6 +31,6 @@ private:
     std::vector<ElementSharedPointer> elements;
 };
 
-#include "FileSystem-inl.h"
+#include "file_system_interface-inl.h"
 
 #endif
