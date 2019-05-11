@@ -1,11 +1,11 @@
 #include <iostream>
-#include "FileSystem.h"
+#include "file_system_interface.h"
 
 using namespace std;
 
 int main()
 {
-    FileSystem interface = FileSystem();
+    FileSystemInterface interface = FileSystemInterface();
     
     interface.add_directory(1, "etc", 0);
     interface.add_file(2, "shadow", "root:!:1331:0:99999:7:::", 1);

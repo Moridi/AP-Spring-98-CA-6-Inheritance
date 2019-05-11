@@ -4,13 +4,13 @@ SRC_DIR = src
 INCLUDE_DIR = include
 CFLAGS = -std=c++11 -Wall -Werror -I$(INCLUDE_DIR)
 
-EXECUTABLE_FILE = FileSystem.out
+EXECUTABLE_FILE = file_system_interface.out
 
 OBJECTS = \
 	$(BUILD_DIR)/File.o \
 	$(BUILD_DIR)/Link.o \
 	$(BUILD_DIR)/Directory.o \
-	$(BUILD_DIR)/FileSystem.o \
+	$(BUILD_DIR)/file_system_interface.o \
 	$(BUILD_DIR)/main.o \
 
 FileSensitivityList = \
@@ -34,10 +34,10 @@ LinkSensitivityList = \
 	$(INCLUDE_DIR)/Element.h \
 	$(INCLUDE_DIR)/Element-inl.h \
 
-FileSystemSensitivityList = \
-	$(SRC_DIR)/FileSystem.cpp \
-	$(INCLUDE_DIR)/FileSystem.h \
-	$(INCLUDE_DIR)/FileSystem-inl.h \
+FileSystemInterfaceSensitivityList = \
+	$(SRC_DIR)/file_system_interface.cpp \
+	$(INCLUDE_DIR)/file_system_interface.h \
+	$(INCLUDE_DIR)/file_system_interface-inl.h \
 	$(INCLUDE_DIR)/Exception.h \
 	$(INCLUDE_DIR)/Exception-inl.h\
 	$(INCLUDE_DIR)/Element.h \
@@ -45,7 +45,7 @@ FileSystemSensitivityList = \
 
 MainSensitivityList = \
 	$(SRC_DIR)/main.cpp \
-	$(INCLUDE_DIR)/FileSystem.h \
+	$(INCLUDE_DIR)/file_system_interface.h \
 
 all: $(BUILD_DIR) $(EXECUTABLE_FILE)
 
@@ -61,8 +61,8 @@ $(BUILD_DIR)/Directory.o: $(DirectorySensitivityList)
 $(BUILD_DIR)/Link.o: $(LinkSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/Link.cpp -o $(BUILD_DIR)/Link.o
 
-$(BUILD_DIR)/FileSystem.o: $(FileSystemSensitivityList)
-	$(CC) $(CFLAGS) -c $(SRC_DIR)/FileSystem.cpp -o $(BUILD_DIR)/FileSystem.o
+$(BUILD_DIR)/file_system_interface.o: $(FileSystemInterfaceSensitivityList)
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/file_system_interface.cpp -o $(BUILD_DIR)/file_system_interface.o
 
 $(BUILD_DIR)/main.o: $(MainSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/main.cpp -o $(BUILD_DIR)/main.o
