@@ -10,7 +10,7 @@ counter=0
 for i in {1..5}
 do
     cp testcases/$i/main.cpp $1/
-    # make clean
+    make clean
     make
     ./$2 2>&1 | diff testcases/$i/$i.txt -
     if ! ./$2 2>&1 | diff -rq testcases/$i/$i.txt -; then

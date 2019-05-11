@@ -1,10 +1,10 @@
 #include <vector>
 #include <iostream>
 
-#include "../header/shape.h"
-#include "../header/sphere.h"
-#include "../header/cone.h"
-#include "../header/cuboid.h"
+#include "shape.h"
+#include "sphere.h"
+#include "cone.h"
+#include "cuboid.h"
 
 using namespace std;
 
