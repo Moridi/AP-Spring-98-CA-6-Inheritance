@@ -12,9 +12,10 @@ counter=0
 for i in {1..6}
 do
     cp testcases/$i/main.cpp $1/
+    make clean
     make
     ./$2 2>&1 | diff testcases/$i/$i.txt -
-    if ! ./$2 2>&1 | diff -rq -B -Z testcases/$i/$i.txt -; then
+    if ! ./$2 2>&1 | diff -rq -B testcases/$i/$i.txt -; then
         echo -e "${RED}$i - Failed!${NC}"
     else
         echo -e "${GREEN}$i - Passed!${NC}"
